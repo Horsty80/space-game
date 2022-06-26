@@ -8,8 +8,12 @@ export default (httpServer) => {
     },
   });
 
-  io.on("connection", (socket) => {
-    console.log("connec in calback");
+  io.on("connect", (socket) => {
+    console.log("connec in calback", socket.id);
+
+    socket.on("custom_event", (data: any) => {
+      console.log("Data: ", data);
+    });
   });
 
   //   useSocketServer(io, { controllers: [__dirname + "/api/controllers/*.ts"] });
