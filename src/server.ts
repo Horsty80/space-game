@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
-import socketServer from "./socket";
 /**
  * Module dependencies.
  */
+import "reflect-metadata";
 var app = require("./app");
 var debug = require("debug")("space-game:server");
 var http = require("http");
+import socketServer from "./socket";
 
 /**
  * Get port from environment and store in Express.
